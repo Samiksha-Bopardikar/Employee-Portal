@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Employee Portal</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1 id="header">Employee Details</h1>
+    <div class="maincontainer">
+            <div class="formcontainer">
+                <form>
+                    <div class="form">
+                        <div class="space-between">
+                            <label  class="labels">Employee ID</label>
+                            <input type="number" id="emp_id" class="textbox" placeholder="Employee id" required>
+                            <p id="idError" class="error"></p>
+                        </div>
+                        <div class="space-between">
+                            <label  class="labels">Name</label>
+                            <input type="text" id="emp_name" class="textbox" placeholder="Name" required maxlength="30">
+                            <p id="nameError" class="error"></p>
+                        </div>
+                        <div class="space-between">
+                            <label  class="labels">Age</label>
+                            <input type="number" id="emp_age" class="textbox" placeholder="Age" required>
+                           <p id="ageError" class="error"></p>
+                        </div>
+
+                        <div class="space-between">
+                            <label  class="labels">Gender</label>
+                            <select id="emp_gender" required>
+                                <option value="select">Select</option>
+                                <option value="Male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <p id="genderError" class="error"></p>
+                        </div>
+                        
+            
+                        
+            
+                       
+            
+                       
+                    </div>
+                  
+                    <div class="addButton">
+                        <button id="add" class="add" onclick="addEmployee();return false;">Add</button>
+                    </div>
+                     </form>
+            </div>
+        
+        <div class="tablecontainer">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"> Employee id</th>
+                        <th scope="col"> Name</th>
+                        <th scope="col"> Age</th>
+                        <th scope="col"> Gender</th>
+                        <th scope="col"> Action</th>
+                    </tr>
+                </thead>
+                <tbody id="emp_tablebody">
+    
+                </tbody>
+                
+            </table>
+        </div>
+    
+    </div>
+    
+    <div class="updateForm" id="updatePopUp">
+        <form>
+          <label  class="labels">Employee ID</label>
+          <input type="number" id="edit_emp_id" class="textbox" placeholder="Employee id" required>
+          <p id="editIdError" class="error"></p><br/>
+
+          <label  class="labels">Name</label>
+          <input type="text" id="edit_emp_name" class="textbox" placeholder="Name" required maxlength="30">
+         <p id="editnameError" class="error"></p><br/>
+
+          <label  class="labels">Age</label>
+          <input type="number" id="edit_emp_age" class="textbox" placeholder="Age" required>
+         <p id="editageError" class="error"></p><br/>
+
+          <label  class="labels">Gender</label>
+          <select id="edit_emp_gender" required>
+              <option value="select">Select</option>
+              <option value="Male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+          </select>
+          <p id="editgenderError" class="error"></p><br/>
+          <input type="hidden" id="old_emp_id"/>
+          <div class="updateCancel">
+            <button id="update" onclick="updateEmployee();return false;">Update</button>
+            <button id="cancel" onclick="cancelUpdate();return false;">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+</body>
+</html>
